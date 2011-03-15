@@ -1,6 +1,6 @@
 {
   "name": "Twitter-Hashtag-Color",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "chagne hashtag color.",
   "icons": { "48": "icon.png" },
   "content_scripts": [
