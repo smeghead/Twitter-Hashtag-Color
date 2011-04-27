@@ -1,6 +1,6 @@
 function get_thc_options() {
   try {
-    var options = {style: 'coloe: #FF33FF;'};
+    var options = {style: 'color: #FF33FF !important;'};
     if (localStorage.thc_options) {
       options = JSON.parse(localStorage.thc_options);
     }

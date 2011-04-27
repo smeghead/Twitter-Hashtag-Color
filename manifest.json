@@ -14,5 +14,7 @@
       "js": ["content-script.js"],
       "run_at": "document_end"
     }
-  ]
+  ],
+  "background_page": "background.html",
+  "options_page": "options.html"
 }
