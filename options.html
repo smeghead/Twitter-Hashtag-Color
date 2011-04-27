@@ -6,7 +6,7 @@
 
 function store_options() {
   console.log('save style:' + document.getElementById('style').value.split("\n"));
-  var style = document.getElementById('style').value.split("\n");
+  var style = document.getElementById('style').value;
   save_thc_options({
     style: style
   });
