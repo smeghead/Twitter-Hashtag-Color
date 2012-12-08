@@ -1,28 +1,25 @@
-var default_options = {style: 'color: #FF33FF !important;'};
-function get_thc_options() {
-  try {
-    var options = default_options;
-    //console.log(options);
-    console.log('y');
-    console.log(localStorage.thc_options);
-    if (localStorage.thc_options) {
-    console.log('yy');
-      options = JSON.parse(localStorage.thc_options);
-    }
-    console.log('z');
-  
-    //save
-    save_thc_options(options);
-    console.log('x');
-    console.log(options);
-    return options;
-  } catch (e) {
-    console.log(e);
-  }
+
+function store_options() {
+  var style = document.getElementById('style').value;
+  save_thc_options({
+    style: style
+  });
+
+  // Update status to let user know options were saved.
+  var status = document.getElementById('status');
+  status.innerHTML = 'Options Saved.';
+  setTimeout(function() {
+    status.innerHTML = "";
+  }, 2000);
 }
-function save_thc_options(options) {
-  localStorage['thc_options'] = JSON.stringify(options);
+
+function restore_options() {
+  var options = get_thc_options();
+  document.getElementById('style').value = options.style;
 }
-function clear_thc_options() {
-  localStorage['thc_options'] = JSON.stringify(default_options);
+function clear_options() {
+  clear_thc_options();
+  restore_options();
 }
+
+window.addEventListener('load', restore_options);

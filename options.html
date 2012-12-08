@@ -1,36 +1,10 @@
 <html>
   <head>
     <title>Twitter Hashtag Color Options</title>
+    <script type="text/javascript" src="background.js"></script>
     <script type="text/javascript" src="options.js"></script>
-    <script type="text/javascript">
-
-function store_options() {
-  console.log('save style:' + document.getElementById('style').value.split("\n"));
-  var style = document.getElementById('style').value;
-  save_thc_options({
-    style: style
-  });
-
-  // Update status to let user know options were saved.
-  var status = document.getElementById('status');
-  status.innerHTML = 'Options Saved.';
-  setTimeout(function() {
-    status.innerHTML = "";
-  }, 2000);
-}
-
-function restore_options() {
-  var options = get_thc_options();
-  console.log(options.style);
-  document.getElementById('style').value = options.style;
-}
-function clear_options() {
-  clear_thc_options();
-  restore_options();
-}
-    </script>
   </head>
-  <body onload="restore_options()">
+  <body>
 
     <h1>Twitter Hashtag Color Settings</h1>
     <div id="status" style="color: blue; font-weight: bold;">
