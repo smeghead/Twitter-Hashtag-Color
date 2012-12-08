@@ -1,4 +1,4 @@
-FILES = README.md icon.png manifest.json content-script.js background.html options.html options.js
+FILES = README.md icon.png manifest.json content-script.js background.js options.html options.js
 
 .PHONY: dist
 default:
